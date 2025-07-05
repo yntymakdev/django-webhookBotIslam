@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'quran_bot.urls'
+ROOT_URLCONF = 'quran_bot.quran_bot.urls'
 
 TEMPLATES = [
     {
