@@ -1,13 +1,8 @@
-from botapp.bot import bot
+import requests
 
-WEBHOOK_URL = 'https://your-app.onrender.com/webhook/'
+TOKEN = "8072816097:AAGhI2SLAHbmKpVPhIOHvaIrKT0RiJ5f1So"
+WEBHOOK_URL = "https://django-webhookbotislam-17.onrender.com/webhook/"
 
-def set_webhook():
-    s = bot.set_webhook(WEBHOOK_URL)
-    if s:
-        print("Webhook установлен успешно")
-    else:
-        print("Ошибка установки webhook")
-
-if __name__ == "__main__":
-    set_webhook()
+# Устанавливаем Webhook для Telegram
+response = requests.get(f"https://api.telegram.org/bot{TOKEN}/setWebhook?url={WEBHOOK_URL}")
+print(response.json())  # Проверяем, что все прошло успешно

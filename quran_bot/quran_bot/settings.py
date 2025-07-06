@@ -25,9 +25,19 @@ SECRET_KEY = 'django-insecure-us%7he-mbwya)6j!#j(m58ka!hn9wo5dn-s-me5fk@2##3+=wq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [  'django-webhookbotislam-17.onrender.com',
+    'localhost',
+    '127.0.0.1',
+    '.onrender.com',]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://django-webhookbotislam-17.onrender.com',
+]
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
 
+# Для продакшена
+SECURE_SSL_REDIRECT = False
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bot_web',
+    'quran_bot',
     # 'dotenv',
     # 'requests',
     # 'python-telegram-bot==13.15',
@@ -53,7 +64,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'quran_bot.quran_bot.urls'
+ROOT_URLCONF = 'quran_bot.urls'
 
 TEMPLATES = [
     {
